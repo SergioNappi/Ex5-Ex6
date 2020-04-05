@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+
+<robot name="ex6" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find exercise6)/urdf/ex6_macro.xacro" />
+
+		<xacro:ex6_link name="link_0" material= "white">
+			<geometry>
+				<box size="2 0.4 0.2"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		      <color rgba="1 1 1 0.5"/>
+		</xacro:ex6_link>
+
+		<xacro:base_link_macro 
+			base_link_name="base_link">
+		</xacro:base_link_macro>
+
+		<xacro:ex6_joint
+			name="joint_0"
+			type="prismatic"
+			parent="link_0"
+			child="base_link">
+			<origin xyz="-0.9 0 0.2" />
+			<axis xyz="1 0 0"/>
+			<limit effort="300" velocity="0.1" lower="0" upper="1.8"/>
+		</xacro:ex6_joint>
+
+	        
+                <xacro:ex6_joint
+			name="joint_1"
+			type="revolute"
+			parent="base_link"
+			child="link_1">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+			<limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+		</xacro:ex6_joint>
+
+                <xacro:ex6_link name="link_1" material= "blue">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		      <color rgba="0 0 1 1"/>
+		        
+		</xacro:ex6_link>
+
+		<xacro:ex6_joint
+			name="joint_2"
+			type="revolute"
+			parent="link_1"
+			child="link_2">
+			<origin xyz="0 0.05 0.15" />
+			<axis xyz="0 1 0"/>
+			<limit effort="300" velocity="0.1" lower="-1.57" upper="1.57"/>
+		</xacro:ex6_joint>
+
+		<xacro:ex6_link name="link_2" material= "red">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0.0 0.1" rpy="0 0 0"/>
+		        <color rgba="1 0 0 1"/>
+		        
+		</xacro:ex6_link>
+
+		<xacro:ex6_joint
+			name="joint_3"
+			type="revolute"
+			parent="link_2"
+			child="link_3">
+			<origin xyz="0 0 0.20" />
+			<axis xyz="0 0 1"/>
+			<limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+		</xacro:ex6_joint>
+
+                <xacro:ex6_link name="link_3" material= "blue">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		      <color rgba="0 0 1 1"/>
+		        
+		</xacro:ex6_link>
+
+		<xacro:ex6_joint
+			name="joint_4"
+			type="revolute"
+			parent="link_3"
+			child="link_4">
+			<origin xyz="0 -0.05 0.15" />
+			<axis xyz="0 1 0"/>
+			<limit effort="300" velocity="0.1" lower="-1.57" upper="1.57"/>
+		</xacro:ex6_joint>
+
+		<xacro:ex6_link name="link_4" material= "red">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		        <color rgba="1 0 0 1"/>
+		        
+		</xacro:ex6_link>
+
+		<xacro:ex6_joint
+			name="joint_5"
+			type="revolute"
+			parent="link_4"
+			child="link_5">
+			<origin xyz="0 0 0.20" />
+			<axis xyz="0 0 1"/>
+			<limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+		</xacro:ex6_joint>
+
+                <xacro:ex6_link name="link_5" material= "blue">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		      <color rgba="0 0 1 1"/>
+		        
+		</xacro:ex6_link>
+
+		<xacro:ex6_joint
+			name="joint_6"
+			type="revolute"
+			parent="link_5"
+			child="link_6">
+			<origin xyz="0 -0.05 0.15" />
+			<axis xyz="0 1 0"/>
+			<limit effort="300" velocity="0.1" lower="-1.57" upper="1.57"/>
+		</xacro:ex6_joint>
+
+		<xacro:ex6_link name="link_6" material= "red">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+		        <color rgba="1 0 0 1"/>
+		        
+		</xacro:ex6_link>
+
+		<xacro:ex6_joint
+			name="joint_7"
+			type="revolute"
+			parent="link_6"
+			child="link_7">
+			<origin xyz="0 0.05 0.20" />
+			<axis xyz="0 0 1"/>
+			<limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+		</xacro:ex6_joint>
+
+                <xacro:ex6_link name="link_7" material= "white">
+			<geometry>
+				<cylinder length="0.05" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.025" rpy="0 0 0"/>
+		      <color rgba="1 1 1 1"/>
+		        
+		</xacro:ex6_link>
+
+</robot>
+
+
